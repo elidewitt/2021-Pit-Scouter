@@ -1,3 +1,11 @@
 div {
-  padding : 10px;
+  margin: 10px;
+  padding: 10px;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  color: white;
+}
+
+input[type=text], input[type=number], select {
+  width: 200px;
 }

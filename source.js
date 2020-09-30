@@ -1,5 +1,11 @@
 const pitScouter = {
   "Robot Information" : {
+    "" : {
+      "Team Number" : {
+        "element" : "input",
+        "type" : "number"
+      }
+    },
     "Robot Size" : {
       "Height (Inches)" : {
         "element" : "input",
@@ -11,23 +17,25 @@ const pitScouter = {
       }
     },
     "Drivetrain" : {
-      "What type?" : {
+      "Drivetrain Type" : {
         "element" : "select",
-        "type" : "text"
+        "type" : "text",
+        "options" : ["Tank", "Mecanum", "H-Drive", "Butterfly", "Swerve"]
       }
     },
     "Inspection" : {
-      "Did they pass inspection?" : {
+      "Inspection Pass" : {
         "element" : "input",
         "type" : "checkbox"
       }
     },
     "Vision System" : {
-      "What type?" : {
+      "Vision System Type" : {
         "element" : "select",
-        "type" : "text"
+        "type" : "text",
+        "options" : ["None", "Webcam", "Limelight", "Vex Color Sensor", "Other (Specify in comments)"]
       },
-      "How is it used?" : {
+      "Vision System Use" : {
         "element" : "input",
         "type" : "text"
       }
@@ -35,39 +43,45 @@ const pitScouter = {
   },
   "Autonomous" : {
     "Autonomous Strategy" : {
-      "Prefered Starting Place" : {
+      "Autonomous Prefered Starting Place" : {
         "element" : "select",
-        "type" : "text"
+        "type" : "text",
+        "options" : ["None", "Left", "Right", "Middle"]
       },
-      "Strategy?" : {
+      "Autonomous Strategy" : {
         "element" : "select",
-        "type" : "text"
+        "type" : "text",
+        "options" : ["Scoring", "Mobility", "Wait for Tele-op", "Other (Specify in comments)"]
       }
     },
     "Autonomous Shooting" : {
-      "Prefered location?" : {
+      "Autonomous Prefered Shooting location" : {
         "element" : "select",
-        "type" : "text"
+        "type" : "text",
+        "options" : ["Trench", "Target Zone", "No Preference", "Other (Specify in comments)"]
       },
-      "Power port(s)?" : {
+      "Autonomous Power port(s)" : {
         "element" : "select",
-        "type" : "text"
+        "type" : "text",
+        "options" : ["Upper Port", "Lower Port", "Both Ports", "None"]
       }
     }
   },
   "Tele-Op" : {
     "Tele-Op Shooting" : {
-      "Prefered location?" : {
+      "Tele-Op Prefered Shooting location" : {
         "element" : "select",
-        "type" : "text"
+        "type" : "text",
+        "options" : ["Trench", "Target Zone", "No Preference", "Other (Specify in comments)"]
       },
-      "Power port(s)?" : {
+      "Tele-Op Power port(s)" : {
         "element" : "select",
-        "type" : "text"
+        "type" : "text",
+        "options" : ["Upper Port", "Lower Port", "Both Ports", "None"]
       }
     },
     "Control Panel" : {
-      "Rotate control?" : {
+      "Rotate control" : {
         "element" : "input",
         "type" : "checkbox"
       },
@@ -79,27 +93,28 @@ const pitScouter = {
   },
   "Other" : {
     "Power Cell Management" : {
-      "Max cells at one time?" : {
+      "Max cells at one time" : {
         "element" : "input",
         "type" : "number"
       },
-      "How do they load cells?" : {
+      "Cell Loading Method" : {
         "element" : "select",
-        "type" : "text"
+        "type" : "text",
+        "options" : ["Driver Station", "Pick up off Ground", "Both", "Other (Specify in comments)"]
       }
     },
     "End Game" : {
-      "Can they Hang?" : {
+      "Can they Hang" : {
         "element" : "input",
         "type" : "checkbox"
       },
-      "Leveling method (for multiple hanging bots)?" : {
+      "Leveling method" : {
         "element" : "input",
-        "type" : "text"
+        "type" : "checkbox"
       }
     },
-    "Comments" : {
-      "" : {
+    "" : {
+      "Comments" : {
         "element" : "input",
         "type" : "text"
       }
