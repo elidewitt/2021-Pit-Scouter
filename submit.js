@@ -5,7 +5,7 @@ function validateAndSubmit() {
 
   let valid = validate();
   if (valid.bool == true) {
-    fileName = document.getElementById("Team Number").value + "_P.xml";
+    fileName = document.getElementById("Team Number").value.slice(0, 4) + "_P.xml";
     xmlDoc = createXML(formName);
 
     let serializer = new XMLSerializer();

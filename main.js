@@ -1,5 +1,7 @@
+target = addItem("div");
+target.id = "questions";
 for (i in pitScouter) {
-  tab = addItem("div");
+  tab = target.appendChild(addItem("div"));
   tab.id = i;
   let hue = Math.random()*360;
   tab.style.backgroundColor = "hsl(" + hue + ", 100%, 40%)";
@@ -7,7 +9,9 @@ for (i in pitScouter) {
   for (j in pitScouter[i]) {
     card = tab.appendChild(addItem("div"));
     card.style.backgroundColor = "hsl(" + hue + ", 100%, 30%)";
-    if (j) cardHeader = card.appendChild(addItem("h2", j));
+    if (j) {
+      cardHeader = card.appendChild(addItem("h2", j));
+    }
     for (k in pitScouter[i][j]) {
       p = card.appendChild(addItem("p", k));
       input = card.appendChild(addItem(pitScouter[i][j][k].element, ""));
@@ -17,7 +21,7 @@ for (i in pitScouter) {
 
       input.name = k.replace(/[ \?\(\)]/g, "");
 
-      if (pitScouter[i][j][k].options) {
+      if (pitScouter[i][j][k].element == "select" && pitScouter[i][j][k].options) {
         option = input.appendChild(addItem("option"));
         option.innerHTML = "";
         option.disabled = true;
@@ -30,7 +34,6 @@ for (i in pitScouter) {
   }
 }
 let submitButton = addItem("button", "Submit");
-
 
 
 

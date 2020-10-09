@@ -2,8 +2,12 @@ const pitScouter = {
   "Robot Information" : {
     "" : {
       "Team Number" : {
-        "element" : "input",
-        "type" : "number"
+        "element" : "select",
+        "type" : "number",
+        "options" : [
+          "0093 : NEW Apple Corps",
+          "0167 : Children of the Corn"
+        ]
       }
     },
     "Robot Size" : {

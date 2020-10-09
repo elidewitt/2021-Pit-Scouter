@@ -6,10 +6,12 @@
   </head>
   <body>
 
-    <form class="scouter" id="scouter" onsubmit="return validateAndSubmit()"></form>
+    <form class="scouter" id="scouter" onsubmit="return validateAndSubmit()">
+      <!-- Prevent implicit submission of the form -->
+      <button type="submit" disabled="" style="display: none" aria-hidden="true"></button>
+    </form>
 
-    
-    
+    <!-- <script src="api.js"></script> -->
     <script src="source.js"></script>
     <script src="main.js"></script>
 
