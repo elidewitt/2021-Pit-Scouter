@@ -1,6 +1,9 @@
-let matches;
-fetch("https://frc-api.firstinspires.org/v2.0/2019/matches/MNDU?tournamentLevel=qual&teamNumber=93")
+//
+let schedule;
+fetch("https://frc-api.firstinspires.org/v2.0/2019/schedule/MNDU?tournamentLevel=qual")
   .then(response => response.json())
   .then(data => {
-    matches = data.Matches;
+    schedule = data.Schedule;
   })
+
+// schedule[matchNum - 1].teams

@@ -97,7 +97,7 @@ const pitScouter = {
   },
   "Other" : {
     "Power Cell Management" : {
-      "Max cells at one time" : {
+      "Max Cells At One Time" : {
         "element" : "input",
         "type" : "number"
       },
