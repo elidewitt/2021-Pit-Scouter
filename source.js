@@ -46,25 +46,25 @@ const pitScouter = {
     }
   },
   "Autonomous" : {
-    "Autonomous Strategy" : {
-      "Autonomous Prefered Starting Place" : {
+    "Auto Strategy" : {
+      "Auto Prefered Starting Place" : {
         "element" : "select",
         "type" : "text",
         "options" : ["None", "Left", "Right", "Middle"]
       },
-      "Autonomous Strategy" : {
+      "Auto Strategy" : {
         "element" : "select",
         "type" : "text",
         "options" : ["Scoring", "Mobility", "Wait for Tele-op", "Other (Specify in comments)"]
       }
     },
-    "Autonomous Shooting" : {
-      "Autonomous Prefered Shooting location" : {
+    "Auto Shooting" : {
+      "Auto Prefered Shooting location" : {
         "element" : "select",
         "type" : "text",
         "options" : ["Trench", "Target Zone", "No Preference", "Other (Specify in comments)"]
       },
-      "Autonomous Power port(s)" : {
+      "Auto Power port(s)" : {
         "element" : "select",
         "type" : "text",
         "options" : ["Upper Port", "Lower Port", "Both Ports", "None"]
@@ -108,11 +108,11 @@ const pitScouter = {
       }
     },
     "End Game" : {
-      "Can they Hang" : {
+      "Can They Hang" : {
         "element" : "input",
         "type" : "checkbox"
       },
-      "Leveling method" : {
+      "Leveling Method" : {
         "element" : "input",
         "type" : "checkbox"
       }
@@ -124,4 +124,13 @@ const pitScouter = {
       }
     }
   },
+  "" : {
+    "" : {
+      "" : {
+        "element" : "button",
+        "type" : "submit"
+      }
+    }
+  }
+
 }

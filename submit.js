@@ -20,8 +20,18 @@ function validateAndSubmit() {
 
 
 function validate() {
+  let passed = true;
+  let elements = document.getElementById("scouter").elements;
+  for (i of elements) {
+    switch (i.tagName) {
+      case "SELECT" :
+      case "INPUT" :
+        if(!Boolean(String(i.value)) && (String(i.id) != "Comments")) passed = false;
+        break;
+    }
+  }
   return {
-    bool: true,
-    msg: "Great Job"
+    bool: passed,
+    msg: "rip"
   }
 }
