@@ -1,5 +1,7 @@
 html {
-  width: 800px;
+  /* width: 400px; */
+  border: 0px;
+  margin: 0px;
   background-color: #303030;
 }
 
@@ -9,7 +11,6 @@ div {
   padding: 5px;
   text-align: center;
   background-color: transparent;
-
 }
 
 div.tab {
@@ -22,6 +23,7 @@ div.card {
 }
 
 p, h1, h2, h3, h4, h5, h6 {
+  font-size: 2vw;
   color: white;
   text-align: center;
   padding-right: 5px;
@@ -30,31 +32,33 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 5vw;
   margin: 5px;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 3vw;
   margin: 5px;
 }
 
 input:not([type=checkbox]), select {
+  width: 100%;
   box-sizing: border-box;
   padding: 5px;
+  height: 5vw;
 }
 
 input[type=checkbox] {
-  -ms-transform: scale(2);
-  -moz-transform: scale(2);
-  -webkit-transform: scale(2);
-  -o-transform: scale(2);
-  transform: scale(2);
+  -ms-transform: scale(3);
+  -moz-transform: scale(3);
+  -webkit-transform: scale(3);
+  -o-transform: scale(3);
+  transform: scale(3);
   padding: 5px;
   margin: 5px;
 }
 
-button {
+button[type=submit] {
   width: 100%;
   margin-top: 5px;
   font-size: 30px;
@@ -66,18 +70,21 @@ button {
 
 div.column {
   float: left;
-  /* width: 50%; */
-  margin: 0px;
+  box-sizing: border-box;
+  /* margin: auto auto; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 5px;
   padding: 0px;
   border: none;
 }
 
 div.row {
   display: flex;
-  margin: 0px;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
   padding: 0px;
-}
-
-#questions {
-
 }
