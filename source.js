@@ -59,7 +59,7 @@ const pitScouter = {
       }
     },
     "Auto Shooting" : {
-      "Auto Prefered Shooting location" : {
+      "Auto Prefered Shooting Place" : {
         "element" : "select",
         "type" : "text",
         "options" : ["Trench", "Target Zone", "No Preference", "Other (Specify in comments)"]
