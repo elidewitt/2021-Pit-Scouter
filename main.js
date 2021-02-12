@@ -58,6 +58,7 @@ for (i in pitScouter) {
       //create the label in it own div if it is found in the source.js
       labelColumn = subdiv.appendChild(addItem("div"));
       labelColumn.classList.add("column");
+      // labelColumn.style.width = "20%";
       if (k) {
         label = labelColumn.appendChild(addItem("p", k));
         label.classList.add("label");
@@ -78,22 +79,25 @@ for (i in pitScouter) {
         if (input.type != "number") {
             inputColumn.style.width = "100%";
         } else {
-          inputColumn.style.width = "80%";
+          inputColumn.style.width = "100%";
 
           increment = subdiv.appendChild(addItem("div"));
           increment.classList.add("column");
-          increment.style.width = "10%";
-          increment.style.height = "50px";
+          increment.style.width = "10vw";
+          increment.style.height = "5vw";
           increment.style.backgroundColor = "#ffffff";
           increment.setAttribute("name", k);
           increment.onclick = function(){
             document.getElementById(this.getAttribute("name")).value ++;
           }
+          incP = increment.appendChild(addItem("p"));
+          incP.classList.add("numButton");
+          incP.innerHTML = "↑";
 
           decrement = subdiv.appendChild(addItem("div"));
           decrement.classList.add("column");
-          decrement.style.width = "10%";
-          decrement.style.height = "50px";
+          decrement.style.width = "10vw";
+          decrement.style.height = "5vw";
           decrement.style.backgroundColor = "#ffffff";
           decrement.setAttribute("name", k);
           decrement.onclick = function(){
@@ -101,19 +105,11 @@ for (i in pitScouter) {
               document.getElementById(this.getAttribute("name")).value --;
             }
           }
+          decP = decrement.appendChild(addItem("p"));
+          decP.classList.add("numButton");
+          decP.innerHTML = "↓";
         }
       }
-
-      // for all inputs that aren't checkboxes, make their width the size of the container minus the width of the label (that way the right edge of all inputs line up)
-      // if (input.type != "checkbox" && k) {
-      //   switch (input.type) {
-      //     case "number":
-      //       input.style.width = (subdiv.offsetWidth - label.offsetWidth) - (subdiv.offsetWidth/2) + "px";
-      //       break;
-      //     default:
-      //       input.style.width = (subdiv.offsetWidth - label.offsetWidth) - 40 + "px";
-      //   }
-      // }
 
       //give each input a name with thie regex thing I don't understand
       input.name = k.replace(/[ \?\(\)]/g, "");
