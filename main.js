@@ -2,9 +2,6 @@
 target = addItem("div");
 target.id = "questions";
 
-// define the lengths of each row
-let rowLen = [1, 2, 2];
-
 // create the row divs and define their sizing based on how many card in the row
 let rows = [];
 let rowContent = [];
@@ -74,41 +71,43 @@ for (i in pitScouter) {
       input.type = pitScouter[i][j][k].type;
       input.id = k;
 
+      // if it is an image, give it a source
       //set the width of inputs to 100% of the container if it isnt a checkbox
-      if (input.type != "checkbox" && k) {
-        if (input.type != "number") {
-            inputColumn.style.width = "100%";
-        } else {
-          inputColumn.style.width = "100%";
+      if (input.type == "image") input.src = pitScouter[i][j][k].src;
 
-          increment = subdiv.appendChild(addItem("div"));
-          increment.classList.add("column");
-          increment.style.width = "10vw";
-          increment.style.height = "5vw";
-          increment.style.backgroundColor = "#ffffff";
-          increment.setAttribute("name", k);
-          increment.onclick = function(){
-            document.getElementById(this.getAttribute("name")).value ++;
-          }
-          incP = increment.appendChild(addItem("p"));
-          incP.classList.add("numButton");
-          incP.innerHTML = "↑";
 
-          decrement = subdiv.appendChild(addItem("div"));
-          decrement.classList.add("column");
-          decrement.style.width = "10vw";
-          decrement.style.height = "5vw";
-          decrement.style.backgroundColor = "#ffffff";
-          decrement.setAttribute("name", k);
-          decrement.onclick = function(){
-            if (document.getElementById(this.getAttribute("name")).value > 0) {
-              document.getElementById(this.getAttribute("name")).value --;
-            }
-          }
-          decP = decrement.appendChild(addItem("p"));
-          decP.classList.add("numButton");
-          decP.innerHTML = "↓";
+      if (input.type != "checkbox") {
+        input.style.width = "100%";
+        inputColumn.style.width = "100%";
+      }
+      if (input.type == "number" && k) {
+        increment = subdiv.appendChild(addItem("div"));
+        increment.classList.add("column");
+        increment.style.width = "12vw";
+        increment.style.height = "8vw";
+        increment.style.backgroundColor = "#ffffff";
+        increment.setAttribute("name", k);
+        increment.onclick = function(){
+          document.getElementById(this.getAttribute("name")).value ++;
         }
+        incP = increment.appendChild(addItem("p"));
+        incP.classList.add("numButton");
+        incP.innerHTML = " ↑ ";
+        decrement = subdiv.appendChild(addItem("div"));
+        decrement.classList.add("column");
+        decrement.style.width = "12vw";
+        decrement.style.height = "8vw";
+        decrement.style.backgroundColor = "#ffffff";
+        decrement.setAttribute("name", k);
+        decrement.onclick = function(){
+          if (document.getElementById(this.getAttribute("name")).value > 0) {
+            document.getElementById(this.getAttribute("name")).value --;
+          }
+        }
+        decP = decrement.appendChild(addItem("p"));
+        decP.classList.add("numButton");
+        decP.innerHTML = " ↓ ";
+
       }
 
       //give each input a name with thie regex thing I don't understand

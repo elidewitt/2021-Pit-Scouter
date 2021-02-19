@@ -1,3 +1,4 @@
+let rowLen = [1, 2, 1, 1];
 const pitScouter = {
   "Robot Information" : {
     "" : {
@@ -119,7 +120,7 @@ const pitScouter = {
     },
     "" : {
       "Comments" : {
-        "element" : "input",
+        "element" : "textarea",
         "type" : "text"
       }
     }

@@ -13,7 +13,7 @@ function validateAndSubmit() {
     download(fileName, fileText);
     window.alert("Success!");
   } else {
-    window.alert("Failure!");
+    window.alert(valid.msg);
   }
   return valid.bool;
 }
@@ -21,17 +21,21 @@ function validateAndSubmit() {
 
 function validate() {
   let passed = true;
+  let errorMsg = "We found issues with the following inputs: \n";
   let elements = document.getElementById("scouter").elements;
   for (i of elements) {
     switch (i.tagName) {
       case "SELECT" :
       case "INPUT" :
-        if(!Boolean(String(i.value)) && (String(i.id) != "Comments")) passed = false;
+        if(!Boolean(String(i.value)) && (String(i.id) != "Comments")) {
+          errorMsg += " * " + i.id + "\n";
+          passed = false;
+        }
         break;
     }
   }
   return {
     bool: passed,
-    msg: "rip"
+    msg: errorMsg
   }
 }
