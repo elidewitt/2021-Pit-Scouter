@@ -57,7 +57,7 @@ input:not([type=checkbox]), select, textarea {
 }
 
 input[type=checkbox] {
-  zoom: 2;
+  zoom: 3;
   padding: 1vw;
   margin: 0px;
 }

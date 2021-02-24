@@ -28,7 +28,7 @@ Array.prototype.translate2d = function() {
 
 // looks for the different tabs (robot info, auto, tele-op ect)
 let cardNum = 0;
-for (i in pitScouter) {
+for (i in scouter) {
   //assign each tab to the correct column
   tab = rowContent.translate2d()[cardNum].appendChild(addItem("div"));
   tab.id = i;
@@ -36,7 +36,7 @@ for (i in pitScouter) {
   tabHeader = tab.appendChild(addItem("h1", i));
 
   //looks for the different cards within each tab (team number, robot size ect)
-  for (j in pitScouter[i]) {
+  for (j in scouter[i]) {
     card = tab.appendChild(addItem("div"));
     card.classList.add("card");
     //card.style.backgroundColor = "hsl(" + hue + ", 100%, 30%)";
@@ -47,16 +47,16 @@ for (i in pitScouter) {
     }
 
     //look at each question within each card (height, weight, drivetrain ect)
-    for (k in pitScouter[i][j]) {
+    for (k in scouter[i][j]) {
       //create a div to contain pairs of labels and inputs
       subdiv = card.appendChild(addItem("div"));
       subdiv.classList.add("row");
 
       //create the label in it own div if it is found in the source.js
-      labelColumn = subdiv.appendChild(addItem("div"));
-      labelColumn.classList.add("column");
-      // labelColumn.style.width = "20%";
+
       if (k) {
+        labelColumn = subdiv.appendChild(addItem("div"));
+        labelColumn.classList.add("column");
         label = labelColumn.appendChild(addItem("p", k));
         label.classList.add("label");
         label.style.display = "inline-block";
@@ -65,15 +65,15 @@ for (i in pitScouter) {
       //create the input in it own div if it is found in the source.js
       inputColumn = subdiv.appendChild(addItem("div"));
       inputColumn.classList.add("column");
-      input = inputColumn.appendChild(addItem(pitScouter[i][j][k].element, ""));
+      input = inputColumn.appendChild(addItem(scouter[i][j][k].element, ""));
 
       //add the defined type and id for each div
-      input.type = pitScouter[i][j][k].type;
+      input.type = scouter[i][j][k].type;
       input.id = k;
 
       // if it is an image, give it a source
       //set the width of inputs to 100% of the container if it isnt a checkbox
-      if (input.type == "image") input.src = pitScouter[i][j][k].src;
+      if (input.type == "image") input.src = scouter[i][j][k].src;
 
 
       if (input.type != "checkbox") {
@@ -107,20 +107,19 @@ for (i in pitScouter) {
         decP = decrement.appendChild(addItem("p"));
         decP.classList.add("numButton");
         decP.innerHTML = " ↓ ";
-
       }
 
       //give each input a name with thie regex thing I don't understand
       input.name = k.replace(/[ \?\(\)]/g, "");
 
       //add the available options if there are any to each select element
-      if (pitScouter[i][j][k].element == "select" && pitScouter[i][j][k].options) {
+      if (scouter[i][j][k].element == "select" && scouter[i][j][k].options) {
         option = input.appendChild(addItem("option"));
         option.innerHTML = "";
         option.disabled = true;
-        for (let l = 0; l < pitScouter[i][j][k].options.length; l++) {
+        for (let l = 0; l < scouter[i][j][k].options.length; l++) {
           option = input.appendChild(addItem("option"));
-          option.innerHTML = pitScouter[i][j][k].options[l];
+          option.innerHTML = scouter[i][j][k].options[l];
         }
       }
     }
